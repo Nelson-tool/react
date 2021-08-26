@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Bookslist() {
+  return (
+    <section className= 'books-list'>
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const Book = () => {
+   const title = 'Fun at the Fair : A sticker storybook ;'
+
+   return  (<article className= 'books'>
+     <img src="https://images-na.ssl-images-amazon.com/images/I/517GItAEg9L._AC_SX184_.jpg " alt=" " />
+     <h1> {title} </h1>
+     <h4> Paperbacks</h4>
+   </article>
+   )  
+ }
+
+ReactDOM.render(<Bookslist />, document.getElementById('root'));
